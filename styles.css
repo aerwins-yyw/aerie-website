@@ -560,41 +560,6 @@ ul { list-style: none; }
 }
 
 /* =====================================================
-   WHY AERIE
-   ===================================================== */
-.why { padding: var(--gap) 0; }
-
-.why__grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
-}
-
-.why-card {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: var(--r-lg);
-    padding: 36px;
-    transition: border-color var(--ease), background var(--ease), transform var(--ease);
-}
-.why-card:hover {
-    border-color: var(--border-2);
-    background: var(--surface-2);
-    transform: translateY(-3px);
-}
-.why-card__icon {
-    width: 46px; height: 46px;
-    background: var(--accent-dim);
-    border-radius: 11px;
-    display: flex; align-items: center; justify-content: center;
-    color: var(--accent);
-    margin-bottom: 20px;
-}
-.why-card__icon svg { width: 22px; height: 22px; }
-.why-card h3 { font-size: 17px; font-weight: 600; margin-bottom: 10px; }
-.why-card p  { font-size: 14px; color: var(--text-2); line-height: 1.65; }
-
-/* =====================================================
    SERVICES
    ===================================================== */
 .services {

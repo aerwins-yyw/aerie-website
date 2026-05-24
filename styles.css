@@ -560,43 +560,6 @@ ul { list-style: none; }
 }
 
 /* =====================================================
-   SERVICES
-   ===================================================== */
-.services {
-    padding: var(--gap) 0;
-    background: var(--bg-2);
-}
-
-.services__grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    background: var(--border);
-    border: 1px solid var(--border);
-    border-radius: var(--r-lg);
-    overflow: hidden;
-    gap: 1px;
-}
-
-.service-item {
-    display: flex;
-    gap: 22px;
-    padding: 40px;
-    background: var(--bg-2);
-    transition: background var(--ease);
-}
-.service-item:hover { background: var(--surface); }
-
-.service-item__icon {
-    width: 46px; height: 46px; flex-shrink: 0;
-    background: var(--accent-dim); border-radius: 11px;
-    display: flex; align-items: center; justify-content: center;
-    color: var(--accent);
-}
-.service-item__icon svg { width: 21px; height: 21px; }
-.service-item__content h3 { font-size: 16px; font-weight: 600; margin-bottom: 9px; }
-.service-item__content p  { font-size: 13px; color: var(--text-2); line-height: 1.6; }
-
-/* =====================================================
    ABOUT
    ===================================================== */
 .about { padding: var(--gap) 0; }

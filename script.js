@@ -44,7 +44,6 @@ function registerAnimations(selector, stagger = false) {
 
 registerAnimations('.pillar-card',     true);
 registerAnimations('.audience-card',   true);
-registerAnimations('.service-item',    true);
 registerAnimations('.about__content');
 registerAnimations('.about__visual');
 registerAnimations('.contact__form-wrap');

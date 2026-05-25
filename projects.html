@@ -58,11 +58,21 @@
             <article class="proj-card">
                 <div class="proj-card__banner proj-card__banner--ai">
                     <div class="proj-card__banner-bg"></div>
-                    <div class="proj-card__banner-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                            <circle cx="12" cy="12" r="3"></circle>
-                            <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"></path>
-                        </svg>
+                    <!-- Chat interface mockup -->
+                    <div class="mockup-chat">
+                        <div class="mockup-chat__header">
+                            <div class="mockup-chat__avatar">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg>
+                            </div>
+                            <div class="mockup-chat__name">EJ AI Superassistant</div>
+                            <div class="mockup-chat__dot"></div>
+                        </div>
+                        <div class="mockup-chat__body">
+                            <div class="chat-bubble chat-bubble--user">Summarize this report for me</div>
+                            <div class="chat-bubble chat-bubble--ai">Sure! Here's a concise summary of the key points: <span class="chat-line"></span><span class="chat-line chat-line--short"></span></div>
+                            <div class="chat-bubble chat-bubble--user">Now draft a follow-up email</div>
+                            <div class="chat-bubble chat-bubble--ai chat-bubble--typing"><span></span><span></span><span></span></div>
+                        </div>
                     </div>
                     <div class="proj-card__banner-label">AI Solution</div>
                 </div>
@@ -104,16 +114,40 @@
                 </div>
             </article>
 
-            <!-- Project 2: Lauren's Patisserie -->
+            <!-- Project 2: Lauren's Pâtisserie -->
             <article class="proj-card">
-                <div class="proj-card__banner proj-card__banner--web">
+                <div class="proj-card__banner proj-card__banner--pat">
                     <div class="proj-card__banner-bg"></div>
-                    <div class="proj-card__banner-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                            <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
-                            <line x1="8" y1="21" x2="16" y2="21"></line>
-                            <line x1="12" y1="17" x2="12" y2="21"></line>
-                        </svg>
+                    <!-- Browser mockup -->
+                    <div class="mockup-browser">
+                        <div class="mockup-browser__bar">
+                            <div class="mockup-browser__dots">
+                                <span></span><span></span><span></span>
+                            </div>
+                            <div class="mockup-browser__url">
+                                <svg viewBox="0 0 12 12" fill="none" width="10" height="10"><circle cx="6" cy="6" r="5" stroke="currentColor" stroke-width="1.2"/><path d="M6 1a7 7 0 0 1 2 5 7 7 0 0 1-2 5M6 1a7 7 0 0 0-2 5 7 7 0 0 0 2 5M1 6h10" stroke="currentColor" stroke-width="1.2"/></svg>
+                                laurens-patisserie.com
+                            </div>
+                        </div>
+                        <div class="mockup-browser__screen">
+                            <div class="pat-nav-bar">
+                                <div class="pat-logo-text">Lauren's Pâtisserie</div>
+                                <div class="pat-nav-links"><span></span><span></span><span></span></div>
+                            </div>
+                            <div class="pat-hero-row">
+                                <div class="pat-hero-text">
+                                    <div class="pat-text-line pat-text-line--title"></div>
+                                    <div class="pat-text-line pat-text-line--sub"></div>
+                                    <div class="pat-cta-btn"></div>
+                                </div>
+                                <div class="pat-hero-cake">🎂</div>
+                            </div>
+                            <div class="pat-products-row">
+                                <div class="pat-prod-card"><div class="pat-prod-img"></div><div class="pat-prod-name"></div></div>
+                                <div class="pat-prod-card"><div class="pat-prod-img"></div><div class="pat-prod-name"></div></div>
+                                <div class="pat-prod-card"><div class="pat-prod-img"></div><div class="pat-prod-name"></div></div>
+                            </div>
+                        </div>
                     </div>
                     <div class="proj-card__banner-label">Web App</div>
                 </div>
@@ -122,7 +156,7 @@
                         <span class="proj-tag proj-tag--blue">Web Development</span>
                         <span class="proj-tag proj-tag--green">Food & Hospitality</span>
                     </div>
-                    <h2 class="proj-card__title">Lauren's Patisserie</h2>
+                    <h2 class="proj-card__title">Lauren's Pâtisserie</h2>
                     <p class="proj-card__desc">
                         A full-featured web application for a boutique patisserie business,
                         allowing customers to browse the menu, place custom cake and pastry orders,
@@ -147,10 +181,18 @@
                             Mobile-friendly responsive design
                         </div>
                     </div>
-                    <div class="proj-card__stack">
-                        <span class="proj-stack-item">Web App</span>
-                        <span class="proj-stack-item">Order System</span>
-                        <span class="proj-stack-item">Dashboard</span>
+                    <div class="proj-card__footer">
+                        <div class="proj-card__stack">
+                            <span class="proj-stack-item">Web App</span>
+                            <span class="proj-stack-item">Order System</span>
+                            <span class="proj-stack-item">Dashboard</span>
+                        </div>
+                        <a href="https://www.laurens-patisserie.com" target="_blank" rel="noopener" class="proj-visit-btn">
+                            Visit Website
+                            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="14" height="14">
+                                <path d="M3 8h10M9 4l4 4-4 4"/>
+                            </svg>
+                        </a>
                     </div>
                 </div>
             </article>

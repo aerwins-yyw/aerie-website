@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aerie — Digital Solutions from a Higher Perspective</title>
     <meta name="description" content="Aerie helps individuals and businesses build digital applications, analyze data, and create intelligent AI-powered solutions.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Instrument+Serif:ital@1&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -13,16 +16,37 @@
 <nav class="nav" id="nav">
     <div class="nav__container">
         <a href="#home" class="nav__logo">
-            <span class="nav__logo-icon">▲</span>
+            <span class="nav__logo-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"><path d="M12 2L21 7V17L12 22L3 17V7L12 2Z"/><path d="M12 2V12M12 12L21 7M12 12L3 7M12 12V22"/></svg></span>
             Aerie
         </a>
         <ul class="nav__links" id="navLinks">
-            <li><a href="#services" class="nav__link">Services</a></li>
-            <li><a href="#solutions" class="nav__link">Solutions</a></li>
-            <li><a href="projects.html" class="nav__link">Projects</a></li>
-            <li><a href="#about" class="nav__link">About</a></li>
-            <li><a href="#contact" class="nav__link nav__link--cta">Contact Us</a></li>
+            <li><a href="#services" class="nav__link" data-i18n="nav_services">Services</a></li>
+            <li><a href="#solutions" class="nav__link" data-i18n="nav_solutions">Solutions</a></li>
+            <li><a href="projects.html" class="nav__link" data-i18n="nav_projects">Projects</a></li>
+            <li><a href="#about" class="nav__link" data-i18n="nav_about">About</a></li>
+            <li><a href="#contact" class="nav__link nav__link--cta" data-i18n="nav_contact">Contact Us</a></li>
         </ul>
+        <div class="nav__controls">
+            <button class="nav__icon-btn" id="themeToggle" aria-label="Toggle dark mode">
+                <span class="theme-toggle__icon">
+                    <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+                    <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 14.5A8 8 0 1 1 9.5 4a6.5 6.5 0 0 0 10.5 10.5z"/></svg>
+                </span>
+            </button>
+            <div class="nav__lang" id="langSwitch">
+                <button class="nav__icon-btn nav__lang-btn" id="langBtn" aria-haspopup="listbox" aria-expanded="false">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 0 1 0 20 15 15 0 0 1 0-20Z"/></svg>
+                    <span id="langCode">EN</span>
+                    <svg viewBox="0 0 12 8" fill="none"><path d="M1 1.5l5 5 5-5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </button>
+                <ul class="nav__lang-menu" id="langMenu" role="listbox">
+                    <li data-lang="en" role="option">English <span class="lang-code">EN</span></li>
+                    <li data-lang="zh" role="option">中文 <span class="lang-code">ZH</span></li>
+                    <li data-lang="id" role="option">Bahasa Indonesia <span class="lang-code">ID</span></li>
+                    <li data-lang="fr" role="option">Français <span class="lang-code">FR</span></li>
+                </ul>
+            </div>
+        </div>
         <button class="nav__toggle" id="navToggle" aria-label="Toggle menu">
             <span></span>
             <span></span>
@@ -33,48 +57,52 @@
 
 <!-- Hero -->
 <section class="hero" id="home">
-    <div class="hero__bg">
-        <div class="hero__orb hero__orb--1"></div>
-        <div class="hero__orb hero__orb--2"></div>
-        <div class="hero__orb hero__orb--3"></div>
-        <div class="hero__grid"></div>
-    </div>
+    <div class="hero__bg"></div>
+    <div class="hero__dotgrid"></div>
+    <div class="hero__cursor-glow"></div>
     <div class="hero__container">
-        <div class="hero__badge">Digital Transformation &nbsp;·&nbsp; AI Solutions &nbsp;·&nbsp; Data Analytics</div>
-        <h1 class="hero__title">
-            Build Smarter.<br>
-            <span class="hero__title--accent">See Higher.</span><br>
-            Grow Further.
-        </h1>
-        <p class="hero__subtitle">
-            Aerie helps individuals and businesses turn ideas, data, and daily workflows
-            into smarter digital systems through application development, data analytics,
-            and AI-powered solutions.
-        </p>
-        <div class="hero__actions">
-            <a href="#contact" class="btn btn--primary">Start a Project</a>
-            <a href="#services" class="btn btn--outline">Explore Services</a>
+        <div class="hero__text">
+            <div class="hero__badge">✦ <span data-i18n="hero_badge_1">Digital Transformation</span> &nbsp;·&nbsp; <span data-i18n="hero_badge_2">AI Solutions</span> &nbsp;·&nbsp; <span data-i18n="hero_badge_3">Data Analytics</span></div>
+            <h1 class="hero__title">
+                <span data-i18n="hero_title_line1">Build Smarter.</span><br>
+                <span data-i18n="hero_title_line2_pre">See </span><span class="text-flare" data-i18n="hero_title_line2_accent">Higher</span><span data-i18n="hero_title_line2_post">.</span><br>
+                <span data-i18n="hero_title_line3">Grow Further.</span>
+            </h1>
+            <p class="hero__subtitle" data-i18n="hero_subtitle">
+                Aerie helps individuals and businesses turn ideas, data, and daily workflows
+                into smarter digital systems through application development, data analytics,
+                and AI-powered solutions.
+            </p>
+            <div class="hero__actions">
+                <a href="#contact" class="btn btn--primary">
+                    <span data-i18n="hero_btn_primary">Start a Project</span>
+                    <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12L12 4M12 4H5M12 4V11"/></svg>
+                </a>
+                <a href="#services" class="btn btn--outline">
+                    <span data-i18n="hero_btn_secondary">Explore Services</span>
+                    <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12L12 4M12 4H5M12 4V11"/></svg>
+                </a>
+            </div>
+            <div class="hero__trust">
+                <div class="hero__avatars">
+                    <span class="hero__avatar" style="background:linear-gradient(135deg,#FFD3E6,#FFB8D6)"></span>
+                    <span class="hero__avatar" style="background:linear-gradient(135deg,#CFF7E1,#A8EFC7)"></span>
+                    <span class="hero__avatar" style="background:linear-gradient(135deg,#D3E3FF,#B7CFFF)"></span>
+                </div>
+                <div class="hero__trust-text">
+                    <strong>3</strong> <span data-i18n="hero_trust_label1">Service Pillars</span> &nbsp;·&nbsp; <strong>∞</strong> <span data-i18n="hero_trust_label2">Possibilities</span> &nbsp;·&nbsp; <strong>1</strong> <span data-i18n="hero_trust_label3">Partner You Need</span>
+                </div>
+            </div>
         </div>
-        <div class="hero__stats">
-            <div class="hero__stat">
-                <span class="hero__stat-num">3</span>
-                <span class="hero__stat-label">Service Pillars</span>
-            </div>
-            <div class="hero__stat-divider"></div>
-            <div class="hero__stat">
-                <span class="hero__stat-num">∞</span>
-                <span class="hero__stat-label">Possibilities</span>
-            </div>
-            <div class="hero__stat-divider"></div>
-            <div class="hero__stat">
-                <span class="hero__stat-num">1</span>
-                <span class="hero__stat-label">Partner You Need</span>
+        <div class="hero__visual">
+            <div class="arrow-glass">
+                <div class="glass-shadow"></div>
+                <div class="chevron chevron--top">
+                    <div class="chevron__bar chevron__bar--l"></div>
+                    <div class="chevron__bar chevron__bar--r"></div>
+                </div>
             </div>
         </div>
-    </div>
-    <div class="hero__scroll">
-        <div class="hero__scroll-line"></div>
-        <span>Scroll to explore</span>
     </div>
 </section>
 
@@ -82,15 +110,15 @@
 <section class="pillars" id="services">
     <div class="container">
         <div class="section-header">
-            <span class="section-tag">What We Do</span>
-            <h2 class="section-title">Three Pillars of Digital Excellence</h2>
-            <p class="section-subtitle">
+            <span class="section-tag" data-i18n="services_tag">What We Do</span>
+            <h2 class="section-title" data-i18n="services_title">Three Pillars of Digital Excellence</h2>
+            <p class="section-subtitle" data-i18n="services_subtitle">
                 Aerie combines deep expertise across three core disciplines to deliver
                 complete digital solutions for any challenge.
             </p>
         </div>
         <div class="pillars__grid">
-            <div class="pillar-card">
+            <div class="pillar-card spotlight">
                 <div class="pillar-card__icon pillar-card__icon--1">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                         <polyline points="16,18 22,12 16,6"></polyline>
@@ -98,21 +126,21 @@
                     </svg>
                 </div>
                 <div class="pillar-card__number">01</div>
-                <h3 class="pillar-card__title">App & Website Development</h3>
-                <p class="pillar-card__desc">
+                <h3 class="pillar-card__title" data-i18n="pillar1_title">App & Website Development</h3>
+                <p class="pillar-card__desc" data-i18n="pillar1_desc">
                     We design and develop websites, mobile apps, dashboards, and business tools
                     that transform ideas into usable, scalable digital products.
                 </p>
                 <ul class="pillar-card__list">
-                    <li>Company & portfolio websites</li>
-                    <li>Mobile applications</li>
-                    <li>Business management systems</li>
-                    <li>E-commerce platforms</li>
-                    <li>Internal workflow tools</li>
+                    <li data-i18n="pillar1_li1">Company & portfolio websites</li>
+                    <li data-i18n="pillar1_li2">Mobile applications</li>
+                    <li data-i18n="pillar1_li3">Business management systems</li>
+                    <li data-i18n="pillar1_li4">E-commerce platforms</li>
+                    <li data-i18n="pillar1_li5">Internal workflow tools</li>
                 </ul>
             </div>
 
-            <div class="pillar-card">
+            <div class="pillar-card spotlight">
                 <div class="pillar-card__icon pillar-card__icon--2">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                         <line x1="18" y1="20" x2="18" y2="10"></line>
@@ -122,21 +150,21 @@
                     </svg>
                 </div>
                 <div class="pillar-card__number">02</div>
-                <h3 class="pillar-card__title">Data Collection & Analytics</h3>
-                <p class="pillar-card__desc">
+                <h3 class="pillar-card__title" data-i18n="pillar2_title">Data Collection & Analytics</h3>
+                <p class="pillar-card__desc" data-i18n="pillar2_desc">
                     We help clients collect, organize, clean, and analyze data to support
                     better decisions and uncover meaningful business insights.
                 </p>
                 <ul class="pillar-card__list">
-                    <li>Business performance dashboards</li>
-                    <li>Data visualization & reporting</li>
-                    <li>Customer & sales analytics</li>
-                    <li>Survey & form systems</li>
-                    <li>Report automation</li>
+                    <li data-i18n="pillar2_li1">Business performance dashboards</li>
+                    <li data-i18n="pillar2_li2">Data visualization & reporting</li>
+                    <li data-i18n="pillar2_li3">Customer & sales analytics</li>
+                    <li data-i18n="pillar2_li4">Survey & form systems</li>
+                    <li data-i18n="pillar2_li5">Report automation</li>
                 </ul>
             </div>
 
-            <div class="pillar-card">
+            <div class="pillar-card spotlight">
                 <div class="pillar-card__icon pillar-card__icon--3">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                         <circle cx="12" cy="12" r="3"></circle>
@@ -144,19 +172,42 @@
                     </svg>
                 </div>
                 <div class="pillar-card__number">03</div>
-                <h3 class="pillar-card__title">AI & Intelligent Solutions</h3>
-                <p class="pillar-card__desc">
+                <h3 class="pillar-card__title" data-i18n="pillar3_title">AI & Intelligent Solutions</h3>
+                <p class="pillar-card__desc" data-i18n="pillar3_desc">
                     We build AI-powered tools that automate tasks, answer questions, process
                     documents, and support smarter decision-making.
                 </p>
                 <ul class="pillar-card__list">
-                    <li>AI assistants & chatbots</li>
-                    <li>Workflow automation</li>
-                    <li>Document processing</li>
-                    <li>Smart recommendation systems</li>
-                    <li>AI-powered customer support</li>
+                    <li data-i18n="pillar3_li1">AI assistants & chatbots</li>
+                    <li data-i18n="pillar3_li2">Workflow automation</li>
+                    <li data-i18n="pillar3_li3">Document processing</li>
+                    <li data-i18n="pillar3_li4">Smart recommendation systems</li>
+                    <li data-i18n="pillar3_li5">AI-powered customer support</li>
                 </ul>
             </div>
+        </div>
+    </div>
+</section>
+
+<!-- Marquee -->
+<section class="marquee">
+    <div class="container">
+        <div class="marquee__label" data-i18n="marquee_label">Built With Modern Tools & Platforms</div>
+    </div>
+    <div class="marquee__viewport">
+        <div class="marquee__track">
+            <span class="marquee__item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="2"/><path d="M12 1a19 19 0 0 1 0 22 19 19 0 0 1 0-22ZM3.5 7a19 19 0 0 1 17 0M3.5 17a19 19 0 0 0 17 0"/></svg>React</span>
+            <span class="marquee__item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 3 7v10l9 5 9-5V7z"/><path d="M3 7l9 5 9-5M12 12v10"/></svg>Node.js</span>
+            <span class="marquee__item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a5 5 0 0 1 5 5v2a3 3 0 0 1-3 3H10a3 3 0 0 0-3 3v2a5 5 0 0 0 5 5"/><path d="M12 22a5 5 0 0 1-5-5v-2a3 3 0 0 1 3-3h4a3 3 0 0 0 3-3V7a5 5 0 0 0-5-5"/></svg>Python</span>
+            <span class="marquee__item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v14c0 1.7 3.6 3 8 3s8-1.3 8-3V5M4 12c0 1.7 3.6 3 8 3s8-1.3 8-3"/></svg>PostgreSQL</span>
+            <span class="marquee__item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/><circle cx="12" cy="12" r="3"/></svg>OpenAI</span>
+            <span class="marquee__item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a5 5 0 0 0-5 5v3H5a3 3 0 0 0 0 6h2v3a5 5 0 0 0 10 0v-3h2a3 3 0 0 0 0-6h-2V7a5 5 0 0 0-5-5Z"/></svg>Figma</span>
+            <span class="marquee__item" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="2"/><path d="M12 1a19 19 0 0 1 0 22 19 19 0 0 1 0-22ZM3.5 7a19 19 0 0 1 17 0M3.5 17a19 19 0 0 0 17 0"/></svg>React</span>
+            <span class="marquee__item" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 3 7v10l9 5 9-5V7z"/><path d="M3 7l9 5 9-5M12 12v10"/></svg>Node.js</span>
+            <span class="marquee__item" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a5 5 0 0 1 5 5v2a3 3 0 0 1-3 3H10a3 3 0 0 0-3 3v2a5 5 0 0 0 5 5"/><path d="M12 22a5 5 0 0 1-5-5v-2a3 3 0 0 1 3-3h4a3 3 0 0 0 3-3V7a5 5 0 0 0-5-5"/></svg>Python</span>
+            <span class="marquee__item" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v14c0 1.7 3.6 3 8 3s8-1.3 8-3V5M4 12c0 1.7 3.6 3 8 3s8-1.3 8-3"/></svg>PostgreSQL</span>
+            <span class="marquee__item" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/><circle cx="12" cy="12" r="3"/></svg>OpenAI</span>
+            <span class="marquee__item" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a5 5 0 0 0-5 5v3H5a3 3 0 0 0 0 6h2v3a5 5 0 0 0 10 0v-3h2a3 3 0 0 0 0-6h-2V7a5 5 0 0 0-5-5Z"/></svg>Figma</span>
         </div>
     </div>
 </section>
@@ -165,23 +216,23 @@
 <section class="audience" id="solutions">
     <div class="container">
         <div class="section-header">
-            <span class="section-tag">Who We Help</span>
-            <h2 class="section-title">Solutions for Every Scale</h2>
-            <p class="section-subtitle">
+            <span class="section-tag" data-i18n="audience_tag">Who We Help</span>
+            <h2 class="section-title" data-i18n="audience_title">Solutions for Every Scale</h2>
+            <p class="section-subtitle" data-i18n="audience_subtitle">
                 Whether you're an individual building something personal or a business
                 scaling to the next level, Aerie has a solution for you.
             </p>
         </div>
         <div class="audience__grid">
-            <div class="audience-card">
+            <div class="audience-card spotlight">
                 <div class="audience-card__icon">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                         <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
                         <circle cx="12" cy="7" r="4"></circle>
                     </svg>
                 </div>
-                <h3 class="audience-card__title">For Individuals</h3>
-                <p class="audience-card__desc">
+                <h3 class="audience-card__title" data-i18n="audience1_title">For Individuals</h3>
+                <p class="audience-card__desc" data-i18n="audience1_desc">
                     From creators to professionals, freelancers to entrepreneurs — Aerie
                     helps you build your digital presence, manage information, and automate
                     personal workflows with ease.
@@ -189,38 +240,38 @@
                 <ul class="audience-card__list">
                     <li>
                         <svg class="check-icon" viewBox="0 0 16 16"><path d="M13.5 3.5l-7 7-3.5-3.5-1 1 4.5 4.5 8-8z" fill="currentColor"/></svg>
-                        Personal & portfolio websites
+                        <span data-i18n="audience1_li1">Personal & portfolio websites</span>
                     </li>
                     <li>
                         <svg class="check-icon" viewBox="0 0 16 16"><path d="M13.5 3.5l-7 7-3.5-3.5-1 1 4.5 4.5 8-8z" fill="currentColor"/></svg>
-                        Personal AI assistants
+                        <span data-i18n="audience1_li2">Personal AI assistants</span>
                     </li>
                     <li>
                         <svg class="check-icon" viewBox="0 0 16 16"><path d="M13.5 3.5l-7 7-3.5-3.5-1 1 4.5 4.5 8-8z" fill="currentColor"/></svg>
-                        Project & task automation
+                        <span data-i18n="audience1_li3">Project & task automation</span>
                     </li>
                     <li>
                         <svg class="check-icon" viewBox="0 0 16 16"><path d="M13.5 3.5l-7 7-3.5-3.5-1 1 4.5 4.5 8-8z" fill="currentColor"/></svg>
-                        Digital presence & branding
+                        <span data-i18n="audience1_li4">Digital presence & branding</span>
                     </li>
                     <li>
                         <svg class="check-icon" viewBox="0 0 16 16"><path d="M13.5 3.5l-7 7-3.5-3.5-1 1 4.5 4.5 8-8z" fill="currentColor"/></svg>
-                        Freelance & creator tools
+                        <span data-i18n="audience1_li5">Freelance & creator tools</span>
                     </li>
                 </ul>
-                <a href="#contact" class="btn btn--outline btn--sm">Get Started</a>
+                <a href="#contact" class="btn btn--outline btn--sm" data-i18n="audience1_btn">Get Started</a>
             </div>
 
-            <div class="audience-card audience-card--featured">
-                <div class="audience-card__badge">Most Popular</div>
+            <div class="audience-card audience-card--featured spotlight">
+                <div class="audience-card__badge" data-i18n="audience2_badge">Most Popular</div>
                 <div class="audience-card__icon">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                         <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
                         <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
                     </svg>
                 </div>
-                <h3 class="audience-card__title">For Businesses</h3>
-                <p class="audience-card__desc">
+                <h3 class="audience-card__title" data-i18n="audience2_title">For Businesses</h3>
+                <p class="audience-card__desc" data-i18n="audience2_desc">
                     From startups to established organizations — Aerie helps you build
                     systems that improve operations, understand customers, and enable
                     data-driven decisions at scale.
@@ -228,26 +279,26 @@
                 <ul class="audience-card__list">
                     <li>
                         <svg class="check-icon" viewBox="0 0 16 16"><path d="M13.5 3.5l-7 7-3.5-3.5-1 1 4.5 4.5 8-8z" fill="currentColor"/></svg>
-                        Business websites & platforms
+                        <span data-i18n="audience2_li1">Business websites & platforms</span>
                     </li>
                     <li>
                         <svg class="check-icon" viewBox="0 0 16 16"><path d="M13.5 3.5l-7 7-3.5-3.5-1 1 4.5 4.5 8-8z" fill="currentColor"/></svg>
-                        Customer data & analytics
+                        <span data-i18n="audience2_li2">Customer data & analytics</span>
                     </li>
                     <li>
                         <svg class="check-icon" viewBox="0 0 16 16"><path d="M13.5 3.5l-7 7-3.5-3.5-1 1 4.5 4.5 8-8z" fill="currentColor"/></svg>
-                        AI-powered automation
+                        <span data-i18n="audience2_li3">AI-powered automation</span>
                     </li>
                     <li>
                         <svg class="check-icon" viewBox="0 0 16 16"><path d="M13.5 3.5l-7 7-3.5-3.5-1 1 4.5 4.5 8-8z" fill="currentColor"/></svg>
-                        Operations dashboards
+                        <span data-i18n="audience2_li4">Operations dashboards</span>
                     </li>
                     <li>
                         <svg class="check-icon" viewBox="0 0 16 16"><path d="M13.5 3.5l-7 7-3.5-3.5-1 1 4.5 4.5 8-8z" fill="currentColor"/></svg>
-                        Internal tools & systems
+                        <span data-i18n="audience2_li5">Internal tools & systems</span>
                     </li>
                 </ul>
-                <a href="#contact" class="btn btn--primary btn--sm">Start a Project</a>
+                <a href="#contact" class="btn btn--primary btn--sm" data-i18n="audience2_btn">Start a Project</a>
             </div>
         </div>
     </div>
@@ -258,18 +309,18 @@
     <div class="container">
         <div class="about__grid">
             <div class="about__content">
-                <span class="section-tag">About Aerie</span>
-                <h2 class="section-title about__section-title">Technology from a Higher Perspective</h2>
-                <p>
+                <span class="section-tag" data-i18n="about_tag">About Aerie</span>
+                <h2 class="section-title about__section-title" data-i18n="about_title">Technology from a Higher Perspective</h2>
+                <p data-i18n="about_p1">
                     Aerie was created with the belief that technology should help people see more clearly,
                     work more efficiently, and grow more confidently.
                 </p>
-                <p>
+                <p data-i18n="about_p2">
                     The name Aerie — a high nest, a place of clarity and vision — reflects our core philosophy:
                     that the right technology gives you a higher perspective. Not just a tool, but a vantage point
                     from which you can see farther, plan better, and move with more purpose.
                 </p>
-                <p>
+                <p data-i18n="about_p3">
                     From building websites and apps to designing dashboards, automation systems, and AI assistants,
                     Aerie helps clients transform scattered ideas and data into structured, intelligent, and useful
                     systems. Our goal is to make technology more accessible, practical, and meaningful for
@@ -278,30 +329,30 @@
                 <div class="about__values">
                     <div class="about__value">
                         <span class="about__value-icon">◆</span>
-                        <span>Clarity over complexity</span>
+                        <span data-i18n="about_value1">Clarity over complexity</span>
                     </div>
                     <div class="about__value">
                         <span class="about__value-icon">◆</span>
-                        <span>Practical over theoretical</span>
+                        <span data-i18n="about_value2">Practical over theoretical</span>
                     </div>
                     <div class="about__value">
                         <span class="about__value-icon">◆</span>
-                        <span>Intelligent by design</span>
+                        <span data-i18n="about_value3">Intelligent by design</span>
                     </div>
                     <div class="about__value">
                         <span class="about__value-icon">◆</span>
-                        <span>Growth-focused always</span>
+                        <span data-i18n="about_value4">Growth-focused always</span>
                     </div>
                 </div>
             </div>
             <div class="about__visual">
-                <div class="about__card">
-                    <div class="about__card-symbol">▲</div>
-                    <blockquote>
+                <div class="about__card spotlight">
+                    <div class="about__card-symbol"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round" stroke-linecap="round"><path d="M12 2L21 7V17L12 22L3 17V7L12 2Z"/><path d="M12 2V12M12 12L21 7M12 12L3 7M12 12V22"/></svg></div>
+                    <blockquote data-i18n="about_quote">
                         "Aerie gives individuals and businesses a higher perspective
                         through technology, data, and AI."
                     </blockquote>
-                    <div class="about__card-slogan">Build Smarter. See Higher. Grow Further.</div>
+                    <div class="about__card-slogan" data-i18n="about_slogan">Build Smarter. See Higher. Grow Further.</div>
                 </div>
             </div>
         </div>
@@ -312,69 +363,72 @@
 <section class="contact" id="contact">
     <div class="container">
         <div class="section-header">
-            <span class="section-tag">Get in Touch</span>
-            <h2 class="section-title">Ready to Build Something Smarter?</h2>
-            <p class="section-subtitle">
+            <span class="section-tag" data-i18n="contact_tag">Get in Touch</span>
+            <h2 class="section-title" data-i18n="contact_title">Ready to Build Something Smarter?</h2>
+            <p class="section-subtitle" data-i18n="contact_subtitle">
                 Let Aerie help you transform your ideas, data, and workflows into
                 intelligent digital solutions.
             </p>
         </div>
         <div class="contact__grid">
-            <div class="contact__form-wrap">
+            <div class="contact__form-wrap spotlight">
                 <form class="contact__form" id="contactForm">
                     <div class="form-row">
                         <div class="form-group">
-                            <label for="name">Your Name</label>
-                            <input type="text" id="name" name="name" placeholder="John Doe" required>
+                            <label for="name" data-i18n="form_label_name">Your Name</label>
+                            <input type="text" id="name" name="name" placeholder="John Doe" data-i18n-placeholder="form_placeholder_name" required>
                         </div>
                         <div class="form-group">
-                            <label for="email">Email Address</label>
-                            <input type="email" id="email" name="email" placeholder="you@company.com" required>
+                            <label for="email" data-i18n="form_label_email">Email Address</label>
+                            <input type="email" id="email" name="email" placeholder="you@company.com" data-i18n-placeholder="form_placeholder_email" required>
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="service">Service Interested In</label>
+                        <label for="service" data-i18n="form_label_service">Service Interested In</label>
                         <select id="service" name="service">
-                            <option value="">Select a service...</option>
-                            <option value="app-dev">App & Website Development</option>
-                            <option value="data">Data Analytics & Dashboards</option>
-                            <option value="ai">AI & Intelligent Solutions</option>
-                            <option value="strategy">Digital Strategy Consulting</option>
-                            <option value="multiple">Multiple Services</option>
+                            <option value="" data-i18n="form_service_default">Select a service...</option>
+                            <option value="app-dev" data-i18n="form_service_1">App & Website Development</option>
+                            <option value="data" data-i18n="form_service_2">Data Analytics & Dashboards</option>
+                            <option value="ai" data-i18n="form_service_3">AI & Intelligent Solutions</option>
+                            <option value="strategy" data-i18n="form_service_4">Digital Strategy Consulting</option>
+                            <option value="multiple" data-i18n="form_service_5">Multiple Services</option>
                         </select>
                     </div>
                     <div class="form-group">
-                        <label for="message">Tell Us About Your Project</label>
-                        <textarea id="message" name="message" rows="5" placeholder="Describe your project, goals, or questions..." required></textarea>
+                        <label for="message" data-i18n="form_label_message">Tell Us About Your Project</label>
+                        <textarea id="message" name="message" rows="5" placeholder="Describe your project, goals, or questions..." data-i18n-placeholder="form_placeholder_message" required></textarea>
                     </div>
-                    <button type="submit" class="btn btn--primary btn--full" id="submitBtn">Send Message</button>
+                    <button type="submit" class="btn btn--primary btn--full" id="submitBtn" data-i18n="form_submit">Send Message</button>
                 </form>
             </div>
             <div class="contact__info">
-                <div class="contact__info-card">
-                    <h3>What Happens Next?</h3>
+                <div class="contact__info-card spotlight">
+                    <h3 data-i18n="contact_info_title">What Happens Next?</h3>
                     <div class="contact__steps">
                         <div class="contact__step">
                             <div class="contact__step-num">01</div>
                             <div>
-                                <strong>We review your message</strong>
-                                <p>Our team reads your inquiry carefully and understands your context and goals.</p>
+                                <strong data-i18n="contact_step1_title">We review your message</strong>
+                                <p data-i18n="contact_step1_desc">Our team reads your inquiry carefully and understands your context and goals.</p>
                             </div>
                         </div>
                         <div class="contact__step">
                             <div class="contact__step-num">02</div>
                             <div>
-                                <strong>We reach out within 24 hours</strong>
-                                <p>A team member contacts you to discuss your project in detail.</p>
+                                <strong data-i18n="contact_step2_title">We reach out within 24 hours</strong>
+                                <p data-i18n="contact_step2_desc">A team member contacts you to discuss your project in detail.</p>
                             </div>
                         </div>
                         <div class="contact__step">
                             <div class="contact__step-num">03</div>
                             <div>
-                                <strong>We propose a tailored solution</strong>
-                                <p>We present a clear plan, timeline, and approach made for your specific needs.</p>
+                                <strong data-i18n="contact_step3_title">We propose a tailored solution</strong>
+                                <p data-i18n="contact_step3_desc">We present a clear plan, timeline, and approach made for your specific needs.</p>
                             </div>
                         </div>
+                    </div>
+                    <div class="contact__email">
+                        <span data-i18n="contact_email_prefix">Prefer email? Reach us at</span> <a href="mailto:services@aerieintelligence.com">services@aerieintelligence.com</a>
                     </div>
                 </div>
             </div>
@@ -388,38 +442,40 @@
         <div class="footer__top">
             <div class="footer__brand">
                 <div class="footer__logo">
-                    <span class="footer__logo-icon">▲</span>
+                    <span class="footer__logo-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"><path d="M12 2L21 7V17L12 22L3 17V7L12 2Z"/><path d="M12 2V12M12 12L21 7M12 12L3 7M12 12V22"/></svg></span>
                     Aerie
                 </div>
-                <p class="footer__tagline">
+                <p class="footer__tagline" data-i18n="footer_tagline">
                     Digital solutions from a higher perspective.
                 </p>
+                <a href="mailto:services@aerieintelligence.com" class="footer__email">services@aerieintelligence.com</a>
             </div>
             <div class="footer__links-group">
-                <h4>Services</h4>
+                <h4 data-i18n="footer_services_heading">Services</h4>
                 <ul>
-                    <li><a href="#services">App Development</a></li>
-                    <li><a href="#services">Data Analytics</a></li>
-                    <li><a href="#services">AI Solutions</a></li>
-                    <li><a href="#services">Digital Strategy</a></li>
+                    <li><a href="#services" data-i18n="footer_service_1">App Development</a></li>
+                    <li><a href="#services" data-i18n="footer_service_2">Data Analytics</a></li>
+                    <li><a href="#services" data-i18n="footer_service_3">AI Solutions</a></li>
+                    <li><a href="#services" data-i18n="footer_service_4">Digital Strategy</a></li>
                 </ul>
             </div>
             <div class="footer__links-group">
-                <h4>Company</h4>
+                <h4 data-i18n="footer_company_heading">Company</h4>
                 <ul>
-                    <li><a href="#about">About Aerie</a></li>
-                    <li><a href="projects.html">Projects</a></li>
-                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#about" data-i18n="footer_company_1">About Aerie</a></li>
+                    <li><a href="projects.html" data-i18n="footer_company_2">Projects</a></li>
+                    <li><a href="#contact" data-i18n="footer_company_3">Contact</a></li>
                 </ul>
             </div>
         </div>
         <div class="footer__bottom">
-            <p>&copy; 2025 Aerie. All rights reserved.</p>
-            <p class="footer__slogan">Build Smarter. See Higher. Grow Further.</p>
+            <p data-i18n="footer_copyright">&copy; 2025 Aerie. All rights reserved.</p>
+            <p class="footer__slogan" data-i18n="footer_slogan">Build Smarter. See Higher. Grow Further.</p>
         </div>
     </div>
 </footer>
 
+<script src="i18n.js"></script>
 <script src="script.js"></script>
 </body>
 </html>

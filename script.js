@@ -148,8 +148,7 @@ registerAnimations('.section-header');
 
 // ── Contact Form ───────────────────────────────────
 // Backend: server/ (Node/Express + Resend), deployed on Railway.
-// Replace with your deployed Railway URL once the backend is live.
-const CONTACT_API_URL = 'https://YOUR-RAILWAY-APP.up.railway.app/api/contact';
+const CONTACT_API_URL = 'https://aerie.up.railway.app/api/contact';
 
 const form      = document.getElementById('contactForm');
 const submitBtn = document.getElementById('submitBtn');

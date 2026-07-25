@@ -12,7 +12,7 @@ const AERIE_LANGS = [
 const AERIE_I18N = {
 en: {
     nav_services: "Services", nav_solutions: "Solutions", nav_projects: "Projects", nav_about: "About", nav_contact: "Contact Us",
-    hero_badge_1: "Digital Transformation", hero_badge_2: "AI Solutions", hero_badge_3: "Data Analytics",
+    hero_badge_1: "System Development", hero_badge_2: "AI Solutions", hero_badge_3: "Data Analytics",
     hero_title_line1: "Build Smarter.", hero_title_line2_pre: "See ", hero_title_line2_accent: "Higher", hero_title_line2_post: ".", hero_title_line3: "Grow Further.",
     hero_subtitle: "Aerie helps individuals and businesses turn ideas, data, and daily workflows into smarter digital systems through application development, data analytics, and AI-powered solutions.",
     hero_btn_primary: "Start a Project", hero_btn_secondary: "Explore Services",
@@ -76,7 +76,7 @@ en: {
 },
 zh: {
     nav_services: "服务", nav_solutions: "解决方案", nav_projects: "项目案例", nav_about: "关于我们", nav_contact: "联系我们",
-    hero_badge_1: "数字化转型", hero_badge_2: "AI 解决方案", hero_badge_3: "数据分析",
+    hero_badge_1: "系统开发", hero_badge_2: "AI 解决方案", hero_badge_3: "数据分析",
     hero_title_line1: "更智慧地构建。", hero_title_line2_pre: "看得更", hero_title_line2_accent: "高远", hero_title_line2_post: "。", hero_title_line3: "走得更远。",
     hero_subtitle: "Aerie 通过应用开发、数据分析和人工智能解决方案，帮助个人与企业将想法、数据和日常工作流程转化为更智能的数字系统。",
     hero_btn_primary: "开启项目", hero_btn_secondary: "探索服务",
@@ -140,7 +140,7 @@ zh: {
 },
 id: {
     nav_services: "Layanan", nav_solutions: "Solusi", nav_projects: "Proyek", nav_about: "Tentang Kami", nav_contact: "Hubungi Kami",
-    hero_badge_1: "Transformasi Digital", hero_badge_2: "Solusi AI", hero_badge_3: "Analitik Data",
+    hero_badge_1: "Pengembangan Sistem", hero_badge_2: "Solusi AI", hero_badge_3: "Analitik Data",
     hero_title_line1: "Bangun Lebih Cerdas.", hero_title_line2_pre: "Lihat Lebih ", hero_title_line2_accent: "Tinggi", hero_title_line2_post: ".", hero_title_line3: "Tumbuh Lebih Jauh.",
     hero_subtitle: "Aerie membantu individu dan bisnis mengubah ide, data, dan alur kerja sehari-hari menjadi sistem digital yang lebih cerdas melalui pengembangan aplikasi, analitik data, dan solusi berbasis AI.",
     hero_btn_primary: "Mulai Proyek", hero_btn_secondary: "Jelajahi Layanan",
@@ -204,7 +204,7 @@ id: {
 },
 fr: {
     nav_services: "Services", nav_solutions: "Solutions", nav_projects: "Projets", nav_about: "À propos", nav_contact: "Contactez-nous",
-    hero_badge_1: "Transformation numérique", hero_badge_2: "Solutions IA", hero_badge_3: "Analyse de données",
+    hero_badge_1: "Développement de systèmes", hero_badge_2: "Solutions IA", hero_badge_3: "Analyse de données",
     hero_title_line1: "Construisez plus intelligemment.", hero_title_line2_pre: "Voyez plus ", hero_title_line2_accent: "haut", hero_title_line2_post: ".", hero_title_line3: "Grandissez plus loin.",
     hero_subtitle: "Aerie aide les particuliers et les entreprises à transformer leurs idées, leurs données et leurs flux de travail quotidiens en systèmes numériques plus intelligents grâce au développement d'applications, à l'analyse de données et aux solutions basées sur l'IA.",
     hero_btn_primary: "Démarrer un projet", hero_btn_secondary: "Découvrir nos services",

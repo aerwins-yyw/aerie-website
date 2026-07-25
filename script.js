@@ -83,6 +83,31 @@ const navLinks  = document.getElementById('navLinks');
     applyLanguage(current);
 })();
 
+// ── Marquee: clone enough groups to loop with no gap at any width ──
+(function initMarquee() {
+    const viewport = document.querySelector('.marquee__viewport');
+    const track    = document.querySelector('.marquee__track');
+    const master   = track && track.querySelector('.marquee__group:not([aria-hidden])');
+    if (!viewport || !track || !master) return;
+
+    function rebuild() {
+        track.querySelectorAll('.marquee__group[aria-hidden]').forEach(el => el.remove());
+        const viewportWidth = viewport.getBoundingClientRect().width;
+        const groupWidth = master.getBoundingClientRect().width;
+        if (!groupWidth) return;
+        const copiesNeeded = Math.ceil(viewportWidth / groupWidth) + 1;
+        for (let i = 0; i < copiesNeeded; i++) {
+            const clone = master.cloneNode(true);
+            clone.setAttribute('aria-hidden', 'true');
+            track.appendChild(clone);
+        }
+        track.style.setProperty('--marquee-shift', `${groupWidth}px`);
+    }
+
+    rebuild();
+    window.addEventListener('resize', rebuild);
+})();
+
 // ── Spotlight cursor-glow on cards ─────────────────
 document.querySelectorAll('.spotlight').forEach(card => {
     card.addEventListener('mousemove', (e) => {
@@ -140,6 +165,7 @@ function registerAnimations(selector, stagger = false) {
 
 registerAnimations('.pillar-card',     true);
 registerAnimations('.audience-card',   true);
+registerAnimations('.proj-grid-card',  true);
 registerAnimations('.about__content');
 registerAnimations('.about__visual');
 registerAnimations('.contact__form-wrap');
@@ -223,51 +249,3 @@ const sectionObserver = new IntersectionObserver((entries) => {
 }, { threshold: 0.4 });
 
 sections.forEach(sec => sectionObserver.observe(sec));
-
-// ── Projects Carousel (slide-to-the-right) ─────────
-(function initProjectsCarousel() {
-    const viewport = document.getElementById('projViewport');
-    const track    = document.getElementById('projTrack');
-    const prevBtn  = document.getElementById('projPrev');
-    const nextBtn  = document.getElementById('projNext');
-    const dots     = document.querySelectorAll('.proj-dot');
-    if (!viewport || !track) return;
-
-    const slideCount = track.children.length;
-
-    function currentIndex() {
-        return Math.round(viewport.scrollLeft / viewport.clientWidth);
-    }
-
-    function goTo(index) {
-        index = Math.max(0, Math.min(slideCount - 1, index));
-        viewport.scrollTo({ left: index * viewport.clientWidth, behavior: 'smooth' });
-    }
-
-    function updateActive() {
-        const index = currentIndex();
-        dots.forEach((d, i) => d.classList.toggle('active', i === index));
-        if (prevBtn) prevBtn.disabled = index === 0;
-        if (nextBtn) nextBtn.disabled = index === slideCount - 1;
-    }
-
-    prevBtn && prevBtn.addEventListener('click', () => goTo(currentIndex() - 1));
-    nextBtn && nextBtn.addEventListener('click', () => goTo(currentIndex() + 1));
-    dots.forEach(dot => {
-        dot.addEventListener('click', () => goTo(Number(dot.dataset.index)));
-    });
-
-    let scrollTicking = false;
-    viewport.addEventListener('scroll', () => {
-        if (scrollTicking) return;
-        scrollTicking = true;
-        window.requestAnimationFrame(() => {
-            updateActive();
-            scrollTicking = false;
-        });
-    }, { passive: true });
-
-    window.addEventListener('resize', () => goTo(currentIndex()));
-
-    updateActive();
-})();

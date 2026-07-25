@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lauren's Pâtisserie — Aerie Projects</title>
+    <meta name="description" content="A full-featured web application for a boutique patisserie business, with online ordering, pickup scheduling, and an owner dashboard.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Instrument+Serif:ital@1&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="../projects.css">
+</head>
+<body>
+
+<!-- Navigation -->
+<nav class="nav" id="nav">
+    <div class="nav__container">
+        <a href="../index.html#home" class="nav__logo">
+            <span class="nav__logo-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"><path d="M12 2L21 7V17L12 22L3 17V7L12 2Z"/><path d="M12 2V12M12 12L21 7M12 12L3 7M12 12V22"/></svg></span>
+            Aerie
+        </a>
+        <ul class="nav__links" id="navLinks">
+            <li><a href="../index.html#services" class="nav__link" data-i18n="nav_services">Services</a></li>
+            <li><a href="../index.html#solutions" class="nav__link" data-i18n="nav_solutions">Solutions</a></li>
+            <li><a href="../index.html#projects" class="nav__link" data-i18n="nav_projects">Projects</a></li>
+            <li><a href="../index.html#about" class="nav__link" data-i18n="nav_about">About</a></li>
+            <li><a href="../index.html#contact" class="nav__link nav__link--cta" data-i18n="nav_contact">Contact Us</a></li>
+        </ul>
+        <div class="nav__controls">
+            <button class="nav__icon-btn" id="themeToggle" aria-label="Toggle dark mode">
+                <span class="theme-toggle__icon">
+                    <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+                    <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 14.5A8 8 0 1 1 9.5 4a6.5 6.5 0 0 0 10.5 10.5z"/></svg>
+                </span>
+            </button>
+            <div class="nav__lang" id="langSwitch">
+                <button class="nav__icon-btn nav__lang-btn" id="langBtn" aria-haspopup="listbox" aria-expanded="false">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 0 1 0 20 15 15 0 0 1 0-20Z"/></svg>
+                    <span id="langCode">EN</span>
+                    <svg viewBox="0 0 12 8" fill="none"><path d="M1 1.5l5 5 5-5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </button>
+                <ul class="nav__lang-menu" id="langMenu" role="listbox">
+                    <li data-lang="en" role="option">English <span class="lang-code">EN</span></li>
+                    <li data-lang="zh" role="option">中文 <span class="lang-code">ZH</span></li>
+                    <li data-lang="id" role="option">Bahasa Indonesia <span class="lang-code">ID</span></li>
+                    <li data-lang="fr" role="option">Français <span class="lang-code">FR</span></li>
+                </ul>
+            </div>
+        </div>
+        <button class="nav__toggle" id="navToggle" aria-label="Toggle menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </div>
+</nav>
+
+<!-- Project Detail -->
+<section class="project-detail-hero">
+    <a href="../index.html#projects" class="project-detail-back">
+        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 3L5 8l5 5"/></svg>
+        <span data-i18n="proj_back_to_projects">All Projects</span>
+    </a>
+
+    <article class="proj-card spotlight">
+        <div class="proj-card__banner proj-card__banner--pat">
+            <div class="proj-card__banner-bg"></div>
+            <div class="mockup-browser">
+                <div class="mockup-browser__bar">
+                    <div class="mockup-browser__dots">
+                        <span></span><span></span><span></span>
+                    </div>
+                    <div class="mockup-browser__url">
+                        <svg viewBox="0 0 12 12" fill="none" width="10" height="10"><circle cx="6" cy="6" r="5" stroke="currentColor" stroke-width="1.2"/><path d="M6 1a7 7 0 0 1 2 5 7 7 0 0 1-2 5M6 1a7 7 0 0 0-2 5 7 7 0 0 0 2 5M1 6h10" stroke="currentColor" stroke-width="1.2"/></svg>
+                        laurens-patisserie.com
+                    </div>
+                </div>
+                <div class="mockup-browser__screen">
+                    <div class="pat-nav-bar">
+                        <div class="pat-logo-text">Lauren's Pâtisserie</div>
+                        <div class="pat-nav-links"><span></span><span></span><span></span></div>
+                    </div>
+                    <div class="pat-hero-row">
+                        <div class="pat-hero-text">
+                            <div class="pat-text-line pat-text-line--title"></div>
+                            <div class="pat-text-line pat-text-line--sub"></div>
+                            <div class="pat-cta-btn"></div>
+                        </div>
+                        <div class="pat-hero-cake">🎂</div>
+                    </div>
+                    <div class="pat-products-row">
+                        <div class="pat-prod-card"><div class="pat-prod-img"></div><div class="pat-prod-name"></div></div>
+                        <div class="pat-prod-card"><div class="pat-prod-img"></div><div class="pat-prod-name"></div></div>
+                        <div class="pat-prod-card"><div class="pat-prod-img"></div><div class="pat-prod-name"></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="proj-card__banner-label" data-i18n="proj2_banner_label">Web App</div>
+        </div>
+        <div class="proj-card__body">
+            <div class="proj-card__meta">
+                <span class="proj-tag proj-tag--blue" data-i18n="proj2_tag1">Web Development</span>
+                <span class="proj-tag proj-tag--green" data-i18n="proj2_tag2">Food & Hospitality</span>
+            </div>
+            <h1 class="proj-card__title" data-i18n="proj2_title">Lauren's Pâtisserie</h1>
+            <p class="proj-card__desc" data-i18n="proj2_desc">
+                A full-featured web application for a boutique patisserie business,
+                allowing customers to browse the menu, place custom cake and pastry orders,
+                and schedule pickups — while giving the owner a clean dashboard to manage
+                orders, inventory, and customer communications in one place.
+            </p>
+            <div class="proj-card__features">
+                <div class="proj-feature">
+                    <svg viewBox="0 0 16 16" fill="currentColor"><path d="M13.5 3.5l-7 7-3.5-3.5-1 1 4.5 4.5 8-8z"/></svg>
+                    <span data-i18n="proj2_feat1">Online menu & product catalog</span>
+                </div>
+                <div class="proj-feature">
+                    <svg viewBox="0 0 16 16" fill="currentColor"><path d="M13.5 3.5l-7 7-3.5-3.5-1 1 4.5 4.5 8-8z"/></svg>
+                    <span data-i18n="proj2_feat2">Custom order & pickup scheduling</span>
+                </div>
+                <div class="proj-feature">
+                    <svg viewBox="0 0 16 16" fill="currentColor"><path d="M13.5 3.5l-7 7-3.5-3.5-1 1 4.5 4.5 8-8z"/></svg>
+                    <span data-i18n="proj2_feat3">Owner dashboard & order management</span>
+                </div>
+                <div class="proj-feature">
+                    <svg viewBox="0 0 16 16" fill="currentColor"><path d="M13.5 3.5l-7 7-3.5-3.5-1 1 4.5 4.5 8-8z"/></svg>
+                    <span data-i18n="proj2_feat4">Mobile-friendly responsive design</span>
+                </div>
+            </div>
+            <div class="proj-card__footer">
+                <div class="proj-card__stack">
+                    <span class="proj-stack-item" data-i18n="proj2_stack1">Web App</span>
+                    <span class="proj-stack-item" data-i18n="proj2_stack2">Order System</span>
+                    <span class="proj-stack-item" data-i18n="proj2_stack3">Dashboard</span>
+                </div>
+                <a href="https://www.laurens-patisserie.com" target="_blank" rel="noopener" class="proj-visit-btn">
+                    <span data-i18n="proj2_visit_btn">Visit Website</span>
+                    <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="14" height="14">
+                        <path d="M3 8h10M9 4l4 4-4 4"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </article>
+</section>
+
+<section class="proj-detail-cta">
+    <div class="proj-detail-cta__inner">
+        <h2 data-i18n="proj_cta_title">Have a similar idea?</h2>
+        <p data-i18n="proj_cta_subtitle">Let's talk about how Aerie can help you build it.</p>
+        <a href="../index.html#contact" class="btn btn--primary">
+            <span data-i18n="hero_btn_primary">Start a Project</span>
+            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12L12 4M12 4H5M12 4V11"/></svg>
+        </a>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+    <div class="container">
+        <div class="footer__top">
+            <div class="footer__brand">
+                <div class="footer__logo">
+                    <span class="footer__logo-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"><path d="M12 2L21 7V17L12 22L3 17V7L12 2Z"/><path d="M12 2V12M12 12L21 7M12 12L3 7M12 12V22"/></svg></span>
+                    Aerie
+                </div>
+                <p class="footer__tagline" data-i18n="footer_tagline">
+                    Digital solutions from a higher perspective.
+                </p>
+                <a href="mailto:support@aerieintelligence.com" class="footer__email">support@aerieintelligence.com</a>
+            </div>
+            <div class="footer__links-group">
+                <h4 data-i18n="footer_services_heading">Services</h4>
+                <ul>
+                    <li><a href="../index.html#services" data-i18n="footer_service_1">App Development</a></li>
+                    <li><a href="../index.html#services" data-i18n="footer_service_2">Data Analytics</a></li>
+                    <li><a href="../index.html#services" data-i18n="footer_service_3">AI Solutions</a></li>
+                    <li><a href="../index.html#services" data-i18n="footer_service_4">Digital Strategy</a></li>
+                </ul>
+            </div>
+            <div class="footer__links-group">
+                <h4 data-i18n="footer_company_heading">Company</h4>
+                <ul>
+                    <li><a href="../index.html#about" data-i18n="footer_company_1">About Aerie</a></li>
+                    <li><a href="../index.html#projects" data-i18n="footer_company_2">Projects</a></li>
+                    <li><a href="../index.html#contact" data-i18n="footer_company_3">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer__bottom">
+            <p data-i18n="footer_copyright">&copy; 2025 Aerie. All rights reserved.</p>
+            <p class="footer__slogan" data-i18n="footer_slogan">Build Smarter. See Higher. Grow Further.</p>
+        </div>
+    </div>
+</footer>
+
+<script src="../i18n.js"></script>
+<script src="../script.js"></script>
+</body>
+</html>

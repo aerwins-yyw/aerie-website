@@ -215,6 +215,7 @@ ul { list-style: none; }
     display: flex;
     width: max-content;
     animation: marqueeScroll 32s linear infinite;
+    --marquee-shift: 50%; /* fallback until JS measures the actual group width */
 }
 .marquee__group {
     display: flex;
@@ -226,7 +227,7 @@ ul { list-style: none; }
 .marquee:hover .marquee__track { animation-play-state: paused; }
 @keyframes marqueeScroll {
     0%   { transform: translateX(0); }
-    100% { transform: translateX(-50%); }
+    100% { transform: translateX(calc(-1 * var(--marquee-shift))); }
 }
 .marquee__item {
     display: flex;

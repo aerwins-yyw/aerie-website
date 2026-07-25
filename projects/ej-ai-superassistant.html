@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EJ AI Superassistant — Aerie Projects</title>
+    <meta name="description" content="A custom AI-powered personal assistant built to handle a wide range of tasks, from answering complex questions to automating daily workflows.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Instrument+Serif:ital@1&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="../projects.css">
+</head>
+<body>
+
+<!-- Navigation -->
+<nav class="nav" id="nav">
+    <div class="nav__container">
+        <a href="../index.html#home" class="nav__logo">
+            <span class="nav__logo-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"><path d="M12 2L21 7V17L12 22L3 17V7L12 2Z"/><path d="M12 2V12M12 12L21 7M12 12L3 7M12 12V22"/></svg></span>
+            Aerie
+        </a>
+        <ul class="nav__links" id="navLinks">
+            <li><a href="../index.html#services" class="nav__link" data-i18n="nav_services">Services</a></li>
+            <li><a href="../index.html#solutions" class="nav__link" data-i18n="nav_solutions">Solutions</a></li>
+            <li><a href="../index.html#projects" class="nav__link" data-i18n="nav_projects">Projects</a></li>
+            <li><a href="../index.html#about" class="nav__link" data-i18n="nav_about">About</a></li>
+            <li><a href="../index.html#contact" class="nav__link nav__link--cta" data-i18n="nav_contact">Contact Us</a></li>
+        </ul>
+        <div class="nav__controls">
+            <button class="nav__icon-btn" id="themeToggle" aria-label="Toggle dark mode">
+                <span class="theme-toggle__icon">
+                    <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+                    <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 14.5A8 8 0 1 1 9.5 4a6.5 6.5 0 0 0 10.5 10.5z"/></svg>
+                </span>
+            </button>
+            <div class="nav__lang" id="langSwitch">
+                <button class="nav__icon-btn nav__lang-btn" id="langBtn" aria-haspopup="listbox" aria-expanded="false">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 0 1 0 20 15 15 0 0 1 0-20Z"/></svg>
+                    <span id="langCode">EN</span>
+                    <svg viewBox="0 0 12 8" fill="none"><path d="M1 1.5l5 5 5-5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </button>
+                <ul class="nav__lang-menu" id="langMenu" role="listbox">
+                    <li data-lang="en" role="option">English <span class="lang-code">EN</span></li>
+                    <li data-lang="zh" role="option">中文 <span class="lang-code">ZH</span></li>
+                    <li data-lang="id" role="option">Bahasa Indonesia <span class="lang-code">ID</span></li>
+                    <li data-lang="fr" role="option">Français <span class="lang-code">FR</span></li>
+                </ul>
+            </div>
+        </div>
+        <button class="nav__toggle" id="navToggle" aria-label="Toggle menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </div>
+</nav>
+
+<!-- Project Detail -->
+<section class="project-detail-hero">
+    <a href="../index.html#projects" class="project-detail-back">
+        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 3L5 8l5 5"/></svg>
+        <span data-i18n="proj_back_to_projects">All Projects</span>
+    </a>
+
+    <article class="proj-card spotlight">
+        <div class="proj-card__banner proj-card__banner--ai">
+            <div class="proj-card__banner-bg"></div>
+            <div class="mockup-chat">
+                <div class="mockup-chat__header">
+                    <div class="mockup-chat__avatar">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg>
+                    </div>
+                    <div class="mockup-chat__name">EJ AI Superassistant</div>
+                    <div class="mockup-chat__dot"></div>
+                </div>
+                <div class="mockup-chat__body">
+                    <div class="chat-bubble chat-bubble--user">Summarize this report for me</div>
+                    <div class="chat-bubble chat-bubble--ai">Sure! Here's a concise summary of the key points: <span class="chat-line"></span><span class="chat-line chat-line--short"></span></div>
+                    <div class="chat-bubble chat-bubble--user">Now draft a follow-up email</div>
+                    <div class="chat-bubble chat-bubble--ai chat-bubble--typing"><span></span><span></span><span></span></div>
+                </div>
+            </div>
+            <div class="proj-card__banner-label" data-i18n="proj1_banner_label">AI Solution</div>
+        </div>
+        <div class="proj-card__body">
+            <div class="proj-card__meta">
+                <span class="proj-tag proj-tag--blue" data-i18n="proj1_tag1">AI & Automation</span>
+                <span class="proj-tag proj-tag--green" data-i18n="proj1_tag2">Personal Productivity</span>
+            </div>
+            <h1 class="proj-card__title" data-i18n="proj1_title">EJ AI Superassistant</h1>
+            <p class="proj-card__desc" data-i18n="proj1_desc">
+                A custom AI-powered personal assistant built to handle a wide range of tasks —
+                from answering complex questions and drafting documents to organizing information
+                and automating repetitive daily workflows. Designed to feel like having a
+                highly capable, always-available team member.
+            </p>
+            <div class="proj-card__features">
+                <div class="proj-feature">
+                    <svg viewBox="0 0 16 16" fill="currentColor"><path d="M13.5 3.5l-7 7-3.5-3.5-1 1 4.5 4.5 8-8z"/></svg>
+                    <span data-i18n="proj1_feat1">Natural language conversation interface</span>
+                </div>
+                <div class="proj-feature">
+                    <svg viewBox="0 0 16 16" fill="currentColor"><path d="M13.5 3.5l-7 7-3.5-3.5-1 1 4.5 4.5 8-8z"/></svg>
+                    <span data-i18n="proj1_feat2">Document drafting & summarization</span>
+                </div>
+                <div class="proj-feature">
+                    <svg viewBox="0 0 16 16" fill="currentColor"><path d="M13.5 3.5l-7 7-3.5-3.5-1 1 4.5 4.5 8-8z"/></svg>
+                    <span data-i18n="proj1_feat3">Task & workflow automation</span>
+                </div>
+                <div class="proj-feature">
+                    <svg viewBox="0 0 16 16" fill="currentColor"><path d="M13.5 3.5l-7 7-3.5-3.5-1 1 4.5 4.5 8-8z"/></svg>
+                    <span data-i18n="proj1_feat4">Personalized knowledge base</span>
+                </div>
+            </div>
+            <div class="proj-card__stack">
+                <span class="proj-stack-item" data-i18n="proj1_stack1">AI / LLM</span>
+                <span class="proj-stack-item" data-i18n="proj1_stack2">Automation</span>
+                <span class="proj-stack-item" data-i18n="proj1_stack3">Custom Interface</span>
+            </div>
+        </div>
+    </article>
+</section>
+
+<section class="proj-detail-cta">
+    <div class="proj-detail-cta__inner">
+        <h2 data-i18n="proj_cta_title">Have a similar idea?</h2>
+        <p data-i18n="proj_cta_subtitle">Let's talk about how Aerie can help you build it.</p>
+        <a href="../index.html#contact" class="btn btn--primary">
+            <span data-i18n="hero_btn_primary">Start a Project</span>
+            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12L12 4M12 4H5M12 4V11"/></svg>
+        </a>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+    <div class="container">
+        <div class="footer__top">
+            <div class="footer__brand">
+                <div class="footer__logo">
+                    <span class="footer__logo-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"><path d="M12 2L21 7V17L12 22L3 17V7L12 2Z"/><path d="M12 2V12M12 12L21 7M12 12L3 7M12 12V22"/></svg></span>
+                    Aerie
+                </div>
+                <p class="footer__tagline" data-i18n="footer_tagline">
+                    Digital solutions from a higher perspective.
+                </p>
+                <a href="mailto:support@aerieintelligence.com" class="footer__email">support@aerieintelligence.com</a>
+            </div>
+            <div class="footer__links-group">
+                <h4 data-i18n="footer_services_heading">Services</h4>
+                <ul>
+                    <li><a href="../index.html#services" data-i18n="footer_service_1">App Development</a></li>
+                    <li><a href="../index.html#services" data-i18n="footer_service_2">Data Analytics</a></li>
+                    <li><a href="../index.html#services" data-i18n="footer_service_3">AI Solutions</a></li>
+                    <li><a href="../index.html#services" data-i18n="footer_service_4">Digital Strategy</a></li>
+                </ul>
+            </div>
+            <div class="footer__links-group">
+                <h4 data-i18n="footer_company_heading">Company</h4>
+                <ul>
+                    <li><a href="../index.html#about" data-i18n="footer_company_1">About Aerie</a></li>
+                    <li><a href="../index.html#projects" data-i18n="footer_company_2">Projects</a></li>
+                    <li><a href="../index.html#contact" data-i18n="footer_company_3">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer__bottom">
+            <p data-i18n="footer_copyright">&copy; 2025 Aerie. All rights reserved.</p>
+            <p class="footer__slogan" data-i18n="footer_slogan">Build Smarter. See Higher. Grow Further.</p>
+        </div>
+    </div>
+</footer>
+
+<script src="../i18n.js"></script>
+<script src="../script.js"></script>
+</body>
+</html>

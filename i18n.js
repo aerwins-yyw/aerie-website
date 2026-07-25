@@ -71,7 +71,6 @@ en: {
     proj2_desc: "A full-featured web application for a boutique patisserie business, allowing customers to browse the menu, place custom cake and pastry orders, and schedule pickups — while giving the owner a clean dashboard to manage orders, inventory, and customer communications in one place.",
     proj2_feat1: "Online menu & product catalog", proj2_feat2: "Custom order & pickup scheduling", proj2_feat3: "Owner dashboard & order management", proj2_feat4: "Mobile-friendly responsive design",
     proj2_stack1: "Web App", proj2_stack2: "Order System", proj2_stack3: "Dashboard", proj2_visit_btn: "Visit Website",
-    proj_cta_text: "Have a project in mind?", proj_cta_btn: "Start a Conversation"
 },
 zh: {
     nav_services: "服务", nav_solutions: "解决方案", nav_projects: "项目案例", nav_about: "关于我们", nav_contact: "联系我们",
@@ -134,7 +133,6 @@ zh: {
     proj2_desc: "一款功能完善的网络应用，专为精品甜点店打造，让顾客可以浏览菜单、定制蛋糕与糕点订单并预约取货，同时为店主提供简洁的后台，统一管理订单、库存和客户沟通。",
     proj2_feat1: "在线菜单与产品目录", proj2_feat2: "定制订单与取货预约", proj2_feat3: "店主后台与订单管理", proj2_feat4: "移动端友好的响应式设计",
     proj2_stack1: "网络应用", proj2_stack2: "订单系统", proj2_stack3: "后台管理", proj2_visit_btn: "访问网站",
-    proj_cta_text: "有项目想法吗？", proj_cta_btn: "开始交流"
 },
 id: {
     nav_services: "Layanan", nav_solutions: "Solusi", nav_projects: "Proyek", nav_about: "Tentang Kami", nav_contact: "Hubungi Kami",
@@ -197,7 +195,6 @@ id: {
     proj2_desc: "Aplikasi web lengkap untuk bisnis toko kue butik, memungkinkan pelanggan menjelajahi menu, memesan kue dan pastry custom, serta menjadwalkan pengambilan — sekaligus memberi pemilik dashboard yang rapi untuk mengelola pesanan, inventaris, dan komunikasi pelanggan dalam satu tempat.",
     proj2_feat1: "Menu online & katalog produk", proj2_feat2: "Pesanan custom & jadwal pengambilan", proj2_feat3: "Dashboard pemilik & manajemen pesanan", proj2_feat4: "Desain responsif yang ramah perangkat mobile",
     proj2_stack1: "Aplikasi Web", proj2_stack2: "Sistem Pemesanan", proj2_stack3: "Dashboard", proj2_visit_btn: "Kunjungi Situs",
-    proj_cta_text: "Punya proyek dalam pikiran?", proj_cta_btn: "Mulai Percakapan"
 },
 fr: {
     nav_services: "Services", nav_solutions: "Solutions", nav_projects: "Projets", nav_about: "À propos", nav_contact: "Contactez-nous",
@@ -260,6 +257,5 @@ fr: {
     proj2_desc: "Une application web complète pour une pâtisserie artisanale, permettant aux clients de parcourir le menu, de commander des gâteaux et pâtisseries personnalisés et de planifier leur retrait — tout en offrant à la propriétaire un tableau de bord clair pour gérer commandes, stocks et communications clients en un seul endroit.",
     proj2_feat1: "Menu en ligne & catalogue de produits", proj2_feat2: "Commandes personnalisées & planification des retraits", proj2_feat3: "Tableau de bord propriétaire & gestion des commandes", proj2_feat4: "Design responsive adapté aux mobiles",
     proj2_stack1: "Application web", proj2_stack2: "Système de commande", proj2_stack3: "Tableau de bord", proj2_visit_btn: "Visiter le site",
-    proj_cta_text: "Un projet en tête ?", proj_cta_btn: "Démarrer une conversation"
 }
 };

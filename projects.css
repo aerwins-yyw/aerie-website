@@ -533,22 +533,6 @@
     transform: translateX(3px);
 }
 
-/* ---- CTA ---- */
-.proj-cta {
-    text-align: center;
-    padding: 60px 24px;
-    border-top: 1px solid var(--border);
-    max-width: 900px;
-    margin: 0 auto;
-}
-
-.proj-cta p {
-    font-size: 20px;
-    font-weight: 600;
-    color: var(--text);
-    margin-bottom: 20px;
-}
-
 /* ---- Responsive ---- */
 @media (max-width: 768px) {
     .proj-card__body { padding: 28px 24px 32px; }

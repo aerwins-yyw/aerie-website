@@ -140,7 +140,6 @@ function registerAnimations(selector, stagger = false) {
 
 registerAnimations('.pillar-card',     true);
 registerAnimations('.audience-card',   true);
-registerAnimations('.proj-cta');
 registerAnimations('.about__content');
 registerAnimations('.about__visual');
 registerAnimations('.contact__form-wrap');

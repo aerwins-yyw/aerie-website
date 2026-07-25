@@ -140,6 +140,7 @@ function registerAnimations(selector, stagger = false) {
 
 registerAnimations('.pillar-card',     true);
 registerAnimations('.audience-card',   true);
+registerAnimations('.proj-cta');
 registerAnimations('.about__content');
 registerAnimations('.about__visual');
 registerAnimations('.contact__form-wrap');
@@ -147,32 +148,62 @@ registerAnimations('.contact__info-card');
 registerAnimations('.section-header');
 
 // ── Contact Form ───────────────────────────────────
+// Backend: server/ (Node/Express + Resend), deployed on Railway.
+// Replace with your deployed Railway URL once the backend is live.
+const CONTACT_API_URL = 'https://YOUR-RAILWAY-APP.up.railway.app/api/contact';
+
 const form      = document.getElementById('contactForm');
 const submitBtn = document.getElementById('submitBtn');
 
 if (form) {
-    form.addEventListener('submit', (e) => {
+    form.addEventListener('submit', async (e) => {
         e.preventDefault();
 
-        const originalText = submitBtn.textContent;
         const t = window.aerieT || ((k) => k);
-        submitBtn.textContent = t('form_sending');
+        const originalText = submitBtn.textContent;
         submitBtn.disabled = true;
+        submitBtn.textContent = t('form_sending');
         submitBtn.style.opacity = '0.8';
 
-        // Simulate submission (replace with real API call)
-        setTimeout(() => {
+        const payload = {
+            name: form.name.value,
+            email: form.email.value,
+            service: form.service.value,
+            message: form.message.value,
+            website: form.website ? form.website.value : '' // honeypot, should stay empty
+        };
+
+        try {
+            const response = await fetch(CONTACT_API_URL, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(payload)
+            });
+            const data = await response.json().catch(() => ({}));
+            if (!response.ok || !data.ok) {
+                throw new Error(data.error || `Request failed (${response.status})`);
+            }
+
             submitBtn.textContent = t('form_sent');
             submitBtn.style.background = '#22c55e';
             submitBtn.style.opacity = '1';
-
             setTimeout(() => {
                 submitBtn.textContent = originalText;
                 submitBtn.style.background = '';
                 submitBtn.disabled = false;
                 form.reset();
             }, 3000);
-        }, 1000);
+        } catch (err) {
+            console.error('Contact form submission failed:', err);
+            submitBtn.textContent = t('form_error');
+            submitBtn.style.background = '#ef4444';
+            submitBtn.style.opacity = '1';
+            setTimeout(() => {
+                submitBtn.textContent = originalText;
+                submitBtn.style.background = '';
+                submitBtn.disabled = false;
+            }, 3500);
+        }
     });
 }
 
@@ -194,3 +225,51 @@ const sectionObserver = new IntersectionObserver((entries) => {
 }, { threshold: 0.4 });
 
 sections.forEach(sec => sectionObserver.observe(sec));
+
+// ── Projects Carousel (slide-to-the-right) ─────────
+(function initProjectsCarousel() {
+    const viewport = document.getElementById('projViewport');
+    const track    = document.getElementById('projTrack');
+    const prevBtn  = document.getElementById('projPrev');
+    const nextBtn  = document.getElementById('projNext');
+    const dots     = document.querySelectorAll('.proj-dot');
+    if (!viewport || !track) return;
+
+    const slideCount = track.children.length;
+
+    function currentIndex() {
+        return Math.round(viewport.scrollLeft / viewport.clientWidth);
+    }
+
+    function goTo(index) {
+        index = Math.max(0, Math.min(slideCount - 1, index));
+        viewport.scrollTo({ left: index * viewport.clientWidth, behavior: 'smooth' });
+    }
+
+    function updateActive() {
+        const index = currentIndex();
+        dots.forEach((d, i) => d.classList.toggle('active', i === index));
+        if (prevBtn) prevBtn.disabled = index === 0;
+        if (nextBtn) nextBtn.disabled = index === slideCount - 1;
+    }
+
+    prevBtn && prevBtn.addEventListener('click', () => goTo(currentIndex() - 1));
+    nextBtn && nextBtn.addEventListener('click', () => goTo(currentIndex() + 1));
+    dots.forEach(dot => {
+        dot.addEventListener('click', () => goTo(Number(dot.dataset.index)));
+    });
+
+    let scrollTicking = false;
+    viewport.addEventListener('scroll', () => {
+        if (scrollTicking) return;
+        scrollTicking = true;
+        window.requestAnimationFrame(() => {
+            updateActive();
+            scrollTicking = false;
+        });
+    }, { passive: true });
+
+    window.addEventListener('resize', () => goTo(currentIndex()));
+
+    updateActive();
+})();

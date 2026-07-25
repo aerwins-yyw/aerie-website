@@ -1,68 +1,99 @@
 /* =====================================================
-   AERIE — Projects Page Styles
+   AERIE — Projects Section Styles
    ===================================================== */
 
-/* ---- Page Hero ---- */
-.proj-hero {
-    position: relative;
-    padding: 160px 24px 100px;
-    overflow: hidden;
-    text-align: center;
-}
+.projects { padding: var(--gap) 0; background: var(--bg); overflow: hidden; }
 
-.proj-hero__bg {
-    position: absolute;
-    inset: 0;
-    overflow: hidden;
-    pointer-events: none;
-    background:
-        radial-gradient(ellipse 900px 600px at 20% 0%, rgba(230, 220, 245, 0.32), transparent 60%),
-        radial-gradient(ellipse 900px 700px at 80% 20%, rgba(215, 240, 235, 0.28), transparent 60%);
-    transition: opacity var(--ease-theme);
-}
-[data-theme="dark"] .proj-hero__bg {
-    background:
-        radial-gradient(ellipse 900px 600px at 20% 0%, rgba(77, 162, 255, 0.16), transparent 60%),
-        radial-gradient(ellipse 900px 700px at 80% 20%, rgba(52, 211, 153, 0.13), transparent 60%);
-}
+.projects .section-header { margin-bottom: 56px; }
 
-.proj-hero__orb,
-.proj-hero__grid { display: none; }
-
-.proj-hero__container {
-    position: relative;
-    z-index: 1;
-    max-width: 680px;
-    margin: 0 auto;
-}
-
-.proj-hero__container .section-tag { margin-bottom: 24px; }
-
-.proj-hero__title {
-    font-size: clamp(36px, 5vw, 58px);
-    font-weight: 700;
-    letter-spacing: -0.03em;
-    margin-bottom: 22px;
-    line-height: 1.08;
-}
-
-.proj-hero__subtitle {
-    font-size: 18px;
-    color: var(--text-2);
-    line-height: 1.7;
-    max-width: 520px;
-    margin: 0 auto;
-}
-
-/* ---- Projects Section ---- */
-.proj-section { padding: 80px 0 120px; }
-
-.proj-grid {
+/* ---- Carousel Shell ---- */
+.proj-carousel {
     display: flex;
-    flex-direction: column;
-    gap: 24px;
-    max-width: 900px;
-    margin: 0 auto 80px;
+    align-items: center;
+    gap: 16px;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+.proj-carousel__viewport {
+    flex: 1;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+}
+.proj-carousel__viewport::-webkit-scrollbar { display: none; }
+
+.proj-carousel__track {
+    display: flex;
+    width: 100%;
+}
+
+.proj-slide {
+    flex: 0 0 100%;
+    width: 100%;
+    scroll-snap-align: center;
+    padding: 4px;
+    box-sizing: border-box;
+}
+
+.proj-carousel__arrow {
+    flex-shrink: 0;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    border: 1px solid var(--border);
+    background: var(--surface);
+    color: var(--text);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all var(--ease-fast);
+}
+.proj-carousel__arrow svg { width: 16px; height: 16px; }
+.proj-carousel__arrow:hover {
+    border-color: var(--border-2);
+    background: var(--bg-3);
+    transform: scale(1.06);
+}
+.proj-carousel__arrow:disabled {
+    opacity: 0.35;
+    cursor: default;
+    transform: none;
+}
+
+.proj-carousel__dots {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin: 28px 0 8px;
+}
+
+.proj-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--border-2);
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    transition: all var(--ease-fast);
+}
+.proj-dot:hover { background: var(--text-3); }
+.proj-dot.active {
+    background: var(--accent);
+    width: 22px;
+    border-radius: 4px;
+}
+
+@media (max-width: 640px) {
+    /* On tall stacked cards the arrows would center on the whole card
+       height, landing off-screen — drop them and rely on swipe + dots. */
+    .proj-carousel__arrow { display: none; }
+    .proj-carousel { padding: 0 16px; }
 }
 
 /* ---- Project Card ---- */
@@ -71,6 +102,8 @@
     border: 1px solid var(--border);
     border-radius: var(--r-lg);
     overflow: hidden;
+    max-width: 900px;
+    margin: 0 auto;
     transition: border-color var(--ease-fast), box-shadow var(--ease-fast), transform var(--ease-fast), background-color var(--ease-theme);
 }
 
@@ -518,7 +551,6 @@
 
 /* ---- Responsive ---- */
 @media (max-width: 768px) {
-    .proj-hero { padding: 140px 24px 80px; }
     .proj-card__body { padding: 28px 24px 32px; }
     .proj-card__features { grid-template-columns: 1fr; }
     .proj-card__title { font-size: 22px; }

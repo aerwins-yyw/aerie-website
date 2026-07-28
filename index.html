@@ -13,12 +13,28 @@
 </head>
 <body>
 
+<!-- Shared brand gradient (blue → green), referenced by icon strokes/fills as url(#brand-gradient) -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+    <defs>
+        <!-- userSpaceOnUse (not objectBoundingBox) so straight <line> icons (zero-width/height
+             bounding box) still render the gradient instead of going blank -->
+        <linearGradient id="brand-gradient" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="24" y2="24">
+            <stop offset="10%" style="stop-color: var(--accent)"></stop>
+            <stop offset="90%" style="stop-color: var(--green)"></stop>
+        </linearGradient>
+        <linearGradient id="brand-gradient-16" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="16" y2="16">
+            <stop offset="10%" style="stop-color: var(--accent)"></stop>
+            <stop offset="90%" style="stop-color: var(--green)"></stop>
+        </linearGradient>
+    </defs>
+</svg>
+
 <!-- Navigation -->
 <nav class="nav" id="nav">
     <div class="nav__container">
         <a href="#home" class="nav__logo">
-            <span class="nav__logo-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"><path d="M12 2L21 7V17L12 22L3 17V7L12 2Z"/><path d="M12 2V12M12 12L21 7M12 12L3 7M12 12V22"/></svg></span>
-            Aerie
+            <span class="nav__logo-icon"><svg viewBox="0 0 24 24" fill="none" stroke="url(#brand-gradient)" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"><path d="M12 2L21 7V17L12 22L3 17V7L12 2Z"/><path d="M12 2V12M12 12L21 7M12 12L3 7M12 12V22"/></svg></span>
+            <span class="gradient-text">Aerie</span>
         </a>
         <ul class="nav__links" id="navLinks">
             <li><a href="#services" class="nav__link" data-i18n="nav_services">Services</a></li>
@@ -121,7 +137,7 @@
         <div class="pillars__grid">
             <div class="pillar-card spotlight">
                 <div class="pillar-card__icon pillar-card__icon--1">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="url(#brand-gradient)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                         <polyline points="16,18 22,12 16,6"></polyline>
                         <polyline points="8,6 2,12 8,18"></polyline>
                     </svg>
@@ -143,7 +159,7 @@
 
             <div class="pillar-card spotlight">
                 <div class="pillar-card__icon pillar-card__icon--2">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="url(#brand-gradient)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                         <line x1="18" y1="20" x2="18" y2="10"></line>
                         <line x1="12" y1="20" x2="12" y2="4"></line>
                         <line x1="6" y1="20" x2="6" y2="14"></line>
@@ -169,7 +185,7 @@
 
             <div class="pillar-card spotlight">
                 <div class="pillar-card__icon pillar-card__icon--3">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="url(#brand-gradient)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                         <circle cx="12" cy="12" r="3"></circle>
                         <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"></path>
                     </svg>
@@ -225,7 +241,7 @@
         <div class="audience__grid">
             <div class="audience-card spotlight">
                 <div class="audience-card__icon">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="url(#brand-gradient)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                         <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
                         <circle cx="12" cy="7" r="4"></circle>
                     </svg>
@@ -238,23 +254,23 @@
                 </p>
                 <ul class="audience-card__list">
                     <li>
-                        <svg class="check-icon" viewBox="0 0 16 16"><path d="M13.5 3.5l-7 7-3.5-3.5-1 1 4.5 4.5 8-8z" fill="currentColor"/></svg>
+                        <svg class="check-icon" viewBox="0 0 16 16"><path d="M13.5 3.5l-7 7-3.5-3.5-1 1 4.5 4.5 8-8z" fill="url(#brand-gradient-16)"/></svg>
                         <span data-i18n="audience1_li1">Personal & portfolio websites</span>
                     </li>
                     <li>
-                        <svg class="check-icon" viewBox="0 0 16 16"><path d="M13.5 3.5l-7 7-3.5-3.5-1 1 4.5 4.5 8-8z" fill="currentColor"/></svg>
+                        <svg class="check-icon" viewBox="0 0 16 16"><path d="M13.5 3.5l-7 7-3.5-3.5-1 1 4.5 4.5 8-8z" fill="url(#brand-gradient-16)"/></svg>
                         <span data-i18n="audience1_li2">Personal AI assistants</span>
                     </li>
                     <li>
-                        <svg class="check-icon" viewBox="0 0 16 16"><path d="M13.5 3.5l-7 7-3.5-3.5-1 1 4.5 4.5 8-8z" fill="currentColor"/></svg>
+                        <svg class="check-icon" viewBox="0 0 16 16"><path d="M13.5 3.5l-7 7-3.5-3.5-1 1 4.5 4.5 8-8z" fill="url(#brand-gradient-16)"/></svg>
                         <span data-i18n="audience1_li3">Project & task automation</span>
                     </li>
                     <li>
-                        <svg class="check-icon" viewBox="0 0 16 16"><path d="M13.5 3.5l-7 7-3.5-3.5-1 1 4.5 4.5 8-8z" fill="currentColor"/></svg>
+                        <svg class="check-icon" viewBox="0 0 16 16"><path d="M13.5 3.5l-7 7-3.5-3.5-1 1 4.5 4.5 8-8z" fill="url(#brand-gradient-16)"/></svg>
                         <span data-i18n="audience1_li4">Digital presence & branding</span>
                     </li>
                     <li>
-                        <svg class="check-icon" viewBox="0 0 16 16"><path d="M13.5 3.5l-7 7-3.5-3.5-1 1 4.5 4.5 8-8z" fill="currentColor"/></svg>
+                        <svg class="check-icon" viewBox="0 0 16 16"><path d="M13.5 3.5l-7 7-3.5-3.5-1 1 4.5 4.5 8-8z" fill="url(#brand-gradient-16)"/></svg>
                         <span data-i18n="audience1_li5">Freelance & creator tools</span>
                     </li>
                 </ul>
@@ -263,7 +279,7 @@
 
             <div class="audience-card audience-card--featured spotlight">
                 <div class="audience-card__icon">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="url(#brand-gradient)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                         <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
                         <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
                     </svg>
@@ -276,23 +292,23 @@
                 </p>
                 <ul class="audience-card__list">
                     <li>
-                        <svg class="check-icon" viewBox="0 0 16 16"><path d="M13.5 3.5l-7 7-3.5-3.5-1 1 4.5 4.5 8-8z" fill="currentColor"/></svg>
+                        <svg class="check-icon" viewBox="0 0 16 16"><path d="M13.5 3.5l-7 7-3.5-3.5-1 1 4.5 4.5 8-8z" fill="url(#brand-gradient-16)"/></svg>
                         <span data-i18n="audience2_li1">Business websites & platforms</span>
                     </li>
                     <li>
-                        <svg class="check-icon" viewBox="0 0 16 16"><path d="M13.5 3.5l-7 7-3.5-3.5-1 1 4.5 4.5 8-8z" fill="currentColor"/></svg>
+                        <svg class="check-icon" viewBox="0 0 16 16"><path d="M13.5 3.5l-7 7-3.5-3.5-1 1 4.5 4.5 8-8z" fill="url(#brand-gradient-16)"/></svg>
                         <span data-i18n="audience2_li2">Customer data & analytics</span>
                     </li>
                     <li>
-                        <svg class="check-icon" viewBox="0 0 16 16"><path d="M13.5 3.5l-7 7-3.5-3.5-1 1 4.5 4.5 8-8z" fill="currentColor"/></svg>
+                        <svg class="check-icon" viewBox="0 0 16 16"><path d="M13.5 3.5l-7 7-3.5-3.5-1 1 4.5 4.5 8-8z" fill="url(#brand-gradient-16)"/></svg>
                         <span data-i18n="audience2_li3">AI-powered automation</span>
                     </li>
                     <li>
-                        <svg class="check-icon" viewBox="0 0 16 16"><path d="M13.5 3.5l-7 7-3.5-3.5-1 1 4.5 4.5 8-8z" fill="currentColor"/></svg>
+                        <svg class="check-icon" viewBox="0 0 16 16"><path d="M13.5 3.5l-7 7-3.5-3.5-1 1 4.5 4.5 8-8z" fill="url(#brand-gradient-16)"/></svg>
                         <span data-i18n="audience2_li4">Operations dashboards</span>
                     </li>
                     <li>
-                        <svg class="check-icon" viewBox="0 0 16 16"><path d="M13.5 3.5l-7 7-3.5-3.5-1 1 4.5 4.5 8-8z" fill="currentColor"/></svg>
+                        <svg class="check-icon" viewBox="0 0 16 16"><path d="M13.5 3.5l-7 7-3.5-3.5-1 1 4.5 4.5 8-8z" fill="url(#brand-gradient-16)"/></svg>
                         <span data-i18n="audience2_li5">Internal tools & systems</span>
                     </li>
                 </ul>
@@ -455,7 +471,7 @@
             </div>
             <div class="about__visual">
                 <div class="about__card spotlight">
-                    <div class="about__card-symbol"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round" stroke-linecap="round"><path d="M12 2L21 7V17L12 22L3 17V7L12 2Z"/><path d="M12 2V12M12 12L21 7M12 12L3 7M12 12V22"/></svg></div>
+                    <div class="about__card-symbol"><svg viewBox="0 0 24 24" fill="none" stroke="url(#brand-gradient)" stroke-width="1.4" stroke-linejoin="round" stroke-linecap="round"><path d="M12 2L21 7V17L12 22L3 17V7L12 2Z"/><path d="M12 2V12M12 12L21 7M12 12L3 7M12 12V22"/></svg></div>
                     <blockquote data-i18n="about_quote">
                         "Aerie gives individuals and businesses a higher perspective
                         through technology, data, and AI."
@@ -507,7 +523,7 @@
                         <label for="message" data-i18n="form_label_message">Tell Us About Your Project</label>
                         <textarea id="message" name="message" rows="5" placeholder="Describe your project, goals, or questions..." data-i18n-placeholder="form_placeholder_message" required></textarea>
                     </div>
-                    <button type="submit" class="btn btn--primary btn--full" id="submitBtn" data-i18n="form_submit">Send Message</button>
+                    <button type="submit" class="btn btn--primary btn--full" id="submitBtn" aria-live="polite" data-i18n="form_submit">Send Message</button>
                 </form>
             </div>
             <div class="contact__info">
@@ -551,8 +567,8 @@
         <div class="footer__top">
             <div class="footer__brand">
                 <div class="footer__logo">
-                    <span class="footer__logo-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"><path d="M12 2L21 7V17L12 22L3 17V7L12 2Z"/><path d="M12 2V12M12 12L21 7M12 12L3 7M12 12V22"/></svg></span>
-                    Aerie
+                    <span class="footer__logo-icon"><svg viewBox="0 0 24 24" fill="none" stroke="url(#brand-gradient)" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"><path d="M12 2L21 7V17L12 22L3 17V7L12 2Z"/><path d="M12 2V12M12 12L21 7M12 12L3 7M12 12V22"/></svg></span>
+                    <span class="gradient-text">Aerie</span>
                 </div>
                 <p class="footer__tagline" data-i18n="footer_tagline">
                     Digital solutions from a higher perspective.

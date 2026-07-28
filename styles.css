@@ -29,6 +29,10 @@
     --green-dim:    rgba(24, 145, 70, 0.09);
     --green-glow:   rgba(24, 145, 70, 0.22);
 
+    --gradient-brand:     linear-gradient(100deg, var(--accent) 10%, var(--green) 90%);
+    --gradient-brand-dim: linear-gradient(135deg, var(--accent-dim), var(--green-dim));
+    --brand-mix:          #117D90;
+
     --text:     #0A0A0B;
     --text-2:   #59595d;
     --text-3:   #94949a;
@@ -76,6 +80,8 @@
     --green-dim:    rgba(52, 211, 153, 0.14);
     --green-glow:   rgba(52, 211, 153, 0.38);
 
+    --brand-mix:    #40BACC;
+
     --text:     #f5f6f7;
     --text-2:   #a4a4ac;
     --text-3:   #6f6f78;
@@ -110,12 +116,21 @@ body {
     font-family: var(--font-flare);
     font-style: italic;
     font-weight: 400;
-    background: linear-gradient(100deg, var(--accent) 10%, var(--green) 90%);
+    background: var(--gradient-brand);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
     color: transparent;
     padding: 0 0.02em;
+}
+
+/* Brand gradient text — same blue-to-green mix as .text-flare, but keeps the host element's own font/weight */
+.gradient-text {
+    background: var(--gradient-brand);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
 }
 
 h1, h2, h3, h4 { line-height: 1.1; font-weight: 700; color: var(--text); letter-spacing: -0.02em; }
@@ -146,9 +161,9 @@ ul { list-style: none; }
     font-weight: 600;
     letter-spacing: 0.1em;
     text-transform: uppercase;
-    color: var(--accent);
-    background: var(--accent-dim);
-    border: 1px solid rgba(10, 132, 255, 0.2);
+    color: var(--brand-mix);
+    background: var(--gradient-brand-dim);
+    border: 1px solid var(--border-2);
     padding: 7px 16px;
     border-radius: 980px;
     margin-bottom: 22px;
@@ -158,7 +173,7 @@ ul { list-style: none; }
     content: '';
     width: 6px; height: 6px;
     border-radius: 50%;
-    background: var(--accent);
+    background: var(--gradient-brand);
     box-shadow: 0 0 0 0 var(--accent-glow);
     animation: tagPulse 2.4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
     flex-shrink: 0;
@@ -363,7 +378,7 @@ ul { list-style: none; }
     gap: 8px;
     color: var(--text);
 }
-.nav__logo-icon { color: var(--text); display: inline-flex; }
+.nav__logo-icon { display: inline-flex; }
 .nav__logo-icon svg { width: 26px; height: 26px; }
 
 .nav__links {
@@ -407,11 +422,15 @@ ul { list-style: none; }
 .nav__toggle {
     display: none;
     flex-direction: column;
+    align-items: center;
+    justify-content: center;
     gap: 5px;
+    width: 44px;
+    height: 44px;
     background: none;
     border: none;
     cursor: pointer;
-    padding: 8px;
+    padding: 0;
 }
 .nav__toggle span {
     display: block;
@@ -436,8 +455,8 @@ ul { list-style: none; }
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 36px;
-    height: 36px;
+    width: 44px;
+    height: 44px;
     border-radius: 980px;
     border: none;
     background: transparent;
@@ -802,9 +821,9 @@ ul { list-style: none; }
 }
 .pillar-card__icon svg { width: 22px; height: 22px; }
 
-.pillar-card__icon--1 { background: var(--accent-dim); color: var(--accent); }
-.pillar-card__icon--2 { background: var(--green-dim); color: var(--green); }
-.pillar-card__icon--3 { background: var(--accent-dim); color: var(--accent); }
+.pillar-card__icon--1,
+.pillar-card__icon--2,
+.pillar-card__icon--3 { background: var(--gradient-brand-dim); }
 
 .pillar-card__number {
     font-family: var(--font-mono);
@@ -860,8 +879,8 @@ ul { list-style: none; }
     transform: translateY(-5px);
 }
 .audience-card--featured {
-    background: linear-gradient(160deg, var(--accent-dim) 0%, var(--surface) 100%);
-    border-color: rgba(10,132,255,0.25);
+    background: linear-gradient(160deg, var(--accent-dim) 0%, var(--surface) 55%, var(--green-dim) 100%);
+    border-color: var(--border-2);
 }
 .audience-card__badge {
     position: absolute; top: -12px; right: 28px;
@@ -877,7 +896,6 @@ ul { list-style: none; }
     background: var(--bg-3); border: 1px solid var(--border);
     border-radius: 14px;
     display: flex; align-items: center; justify-content: center;
-    color: var(--accent);
     margin-bottom: 26px;
 }
 .audience-card__icon svg { width: 24px; height: 24px; }
@@ -889,7 +907,7 @@ ul { list-style: none; }
     font-size: 14px; color: var(--text-2);
 }
 .check-icon {
-    width: 16px; height: 16px; flex-shrink: 0; color: var(--green);
+    width: 16px; height: 16px; flex-shrink: 0;
 }
 
 /* =====================================================
@@ -917,7 +935,14 @@ ul { list-style: none; }
     display: flex; align-items: center; gap: 12px;
     font-size: 15px; font-weight: 500; color: var(--text);
 }
-.about__value-icon { color: var(--accent); font-size: 8px; }
+.about__value-icon {
+    background: var(--gradient-brand);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+    font-size: 8px;
+}
 
 .about__visual { display: flex; align-items: center; justify-content: center; }
 
@@ -931,7 +956,6 @@ ul { list-style: none; }
     transition: background-color var(--ease-theme), border-color var(--ease-theme);
 }
 .about__card-symbol {
-    color: var(--accent-light);
     opacity: 0.9;
     margin-bottom: 26px;
     display: flex;
@@ -1061,8 +1085,16 @@ ul { list-style: none; }
     font-size: 14px;
     color: var(--text-2);
 }
-.contact__email a { color: var(--accent); font-weight: 600; }
-.contact__email a:hover { color: var(--text); }
+.contact__email a {
+    background: var(--gradient-brand);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+    font-weight: 600;
+    transition: opacity var(--ease-fast);
+}
+.contact__email a:hover { opacity: 0.72; }
 
 /* =====================================================
    FOOTER
@@ -1086,17 +1118,21 @@ ul { list-style: none; }
     display: flex; align-items: center; gap: 8px;
     color: var(--text); margin-bottom: 14px;
 }
-.footer__logo-icon { color: var(--accent-light); font-size: 15px; }
+.footer__logo-icon { font-size: 15px; }
 .footer__tagline { font-size: 14px; color: var(--text-3); max-width: 220px; line-height: 1.6; }
 .footer__email {
     display: inline-block;
     margin-top: 12px;
     font-size: 14px;
-    color: var(--accent);
+    background: var(--gradient-brand);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
     font-weight: 500;
-    transition: color var(--ease-fast);
+    transition: opacity var(--ease-fast);
 }
-.footer__email:hover { color: var(--text); }
+.footer__email:hover { opacity: 0.72; }
 
 .footer__links-group h4 {
     font-family: var(--font-mono);
@@ -1112,7 +1148,7 @@ ul { list-style: none; }
     padding-top: 28px;
     border-top: 1px solid var(--border);
 }
-.footer__bottom p { font-size: 13px; color: var(--text-3); margin: 0; }
+.footer__bottom p { font-size: 13px; color: var(--text-2); margin: 0; }
 .footer__slogan   { font-style: italic; }
 
 /* =====================================================
@@ -1166,6 +1202,11 @@ ul { list-style: none; }
     .services__grid { grid-template-columns: 1fr; }
 
     .form-row { grid-template-columns: 1fr; }
+
+    /* 16px avoids iOS Safari auto-zooming into the field on focus */
+    .form-group input,
+    .form-group select,
+    .form-group textarea { font-size: 16px; }
 
     .footer__top { grid-template-columns: 1fr 1fr; }
     .footer__brand { grid-column: span 2; }
